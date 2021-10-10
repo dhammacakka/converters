@@ -10,4 +10,6 @@ void main(List<String> arguments) {
   print('DC -> $dc');
 
   print('Unicode eve.m me sutta.m -> ${toSin('evaṃ me sutaṃ')}');
+
+  print('From sinhala: ${fromSin('ධම්මපද')}');
 }

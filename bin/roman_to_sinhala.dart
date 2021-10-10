@@ -350,7 +350,7 @@ String toSin(String input) {
       .replaceAll(r'\`+', '"');
 }
 
-String fromSin(input,type) {
+String fromSin(input) {
   var vowel = {};
 
   vowel['අ'] = 'a';
@@ -438,18 +438,18 @@ String fromSin(input,type) {
   var output = '';
   var i = 0;
 
-  input = input.replace(r'\&quot;', '`');
+  input = input.replaceAll(r'\&quot;', '`');
 
   while (i < input.length) {
-    i1 = input.charAt(i);
+    i1 = charAt(input, i);
 
-    if (vowel[i1]) {
+    if (vowel[i1] != null) {
       if(output[output.length - 1] == 'a') {
         output = output.substring(0,output.length-1);
       }
       output += vowel[i1];
 
-    } else if (sinhala[i1]) {
+    } else if (sinhala[i1] != null) {
       output += sinhala[i1]+'a';
 
     } else {
